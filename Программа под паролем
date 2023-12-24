@@ -6,6 +6,7 @@ internal class Program
         int triesCount = 3;
         string password = "12345";
         string userInput;
+        int numberRemainingAttempts;
 
         Console.WriteLine("Отгадайте пароль чтобы увидеть секретное сообщение. У Вас 3 попытки.");
 
@@ -13,6 +14,7 @@ internal class Program
         {
             Console.Write($"Введите пароль: ");
             userInput = Console.ReadLine();
+            numberRemainingAttempts = i + 1;
 
             if (userInput == password)
             {
@@ -22,10 +24,8 @@ internal class Program
             else
             {
                 Console.WriteLine("Вы ввели не верный пароль! Попробуйте еще раз.");
-                Console.WriteLine($"У Вас осталось " + (triesCount - (i + 1)) + " попыток.");
+                Console.WriteLine($"У Вас осталось " + (triesCount - numberRemainingAttempts) + " попыток.");
             }
         }
 
         Console.ReadKey();
-    }
-}
