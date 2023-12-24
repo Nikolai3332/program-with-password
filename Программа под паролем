@@ -2,28 +2,30 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        string secretMessage = "Вы угадали пароль!";
         int triesCount = 3;
-        string password = "";
+        string password = "12345";
         string userInput;
 
-        Console.Write("Придумайте пароль: ");
-        password = Console.ReadLine();
+        Console.WriteLine("Отгадайте пароль чтобы увидеть секретное сообщение. У Вас 3 попытки.");
 
         for (int i = 0; i < triesCount; i++)
         {
-            Console.Write("Введите пароль: ");
+            Console.Write($"Введите пароль: ");
             userInput = Console.ReadLine();
 
-            if (password == userInput)
+            if (userInput == password)
             {
-                Console.WriteLine("Секретное сообщение.");
+                Console.WriteLine(secretMessage);
                 break;
             }
             else
             {
-                Console.WriteLine("Вы ввели не верный пароль! У вас осталось попыток: " + (triesCount - i -1));
+                Console.WriteLine("Вы ввели не верный пароль! Попробуйте еще раз.");
+                Console.WriteLine($"У Вас осталось " + (triesCount - (i + 1)) + " попыток.");
             }
-        } Console.ReadKey();
+        }
 
+        Console.ReadKey();
     }
 }
