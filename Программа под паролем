@@ -14,7 +14,7 @@ internal class Program
         {
             Console.Write($"Введите пароль: ");
             userInput = Console.ReadLine();
-            numberRemainingAttempts = i + 1;
+            numberRemainingAttempts = triesCount - (i + 1);
 
             if (userInput == password)
             {
@@ -24,8 +24,10 @@ internal class Program
             else
             {
                 Console.WriteLine("Вы ввели не верный пароль! Попробуйте еще раз.");
-                Console.WriteLine($"У Вас осталось " + (triesCount - numberRemainingAttempts) + " попыток.");
+                Console.WriteLine($"У Вас осталось " + numberRemainingAttempts + " попыток.");
             }
         }
 
         Console.ReadKey();
+    }
+}   
