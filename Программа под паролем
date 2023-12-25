@@ -8,7 +8,7 @@ internal class Program
         string userInput;
         int numberRemainingAttempts;
 
-        Console.WriteLine("Отгадайте пароль чтобы увидеть секретное сообщение. У Вас 3 попытки.");
+        Console.WriteLine($"Отгадайте пароль чтобы увидеть секретное сообщение. У Вас {triesCount} попытки.");
 
         for (int i = 0; i < triesCount; i++)
         {
